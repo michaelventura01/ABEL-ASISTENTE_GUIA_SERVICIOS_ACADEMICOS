@@ -1,0 +1,83 @@
+{
+  "umbral": 0.45,
+  "conjunto": "dev",
+  "n_total": 25,
+  "cobertura_evaluada": 25,
+  "fuera_de_alcance": 0,
+  "tasa_acierto_en_alcance": 1.0,
+  "tasa_respuesta_automatica_en_alcance": 1.0,
+  "tasa_respuesta_automatica_total": 1.0,
+  "tasa_omision_en_alcance": 0.0,
+  "tasa_respuesta_incorrecta_en_alcance": 0.0,
+  "tasa_abstencion_correcta_fuera_alcance": null,
+  "tasa_falso_positivo_fuera_alcance": null,
+  "por_registro": [
+    {
+      "registro": "formal",
+      "n": 25,
+      "acierto": 25,
+      "abstencion_correcta": 0,
+      "correcto_total": 25,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    }
+  ],
+  "por_registro_en_alcance": [
+    {
+      "registro": "formal",
+      "n": 25,
+      "acierto": 25,
+      "abstencion_correcta": 0,
+      "correcto_total": 25,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    }
+  ],
+  "por_categoria": [
+    {
+      "categoria_esperada": "aulas",
+      "n": 5,
+      "acierto": 5,
+      "abstencion_correcta": 0,
+      "correcto_total": 5,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    },
+    {
+      "categoria_esperada": "avisos",
+      "n": 4,
+      "acierto": 4,
+      "abstencion_correcta": 0,
+      "correcto_total": 4,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    },
+    {
+      "categoria_esperada": "horarios",
+      "n": 5,
+      "acierto": 5,
+      "abstencion_correcta": 0,
+      "correcto_total": 5,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    },
+    {
+      "categoria_esperada": "servicios",
+      "n": 6,
+      "acierto": 6,
+      "abstencion_correcta": 0,
+      "correcto_total": 6,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    },
+    {
+      "categoria_esperada": "tramites",
+      "n": 5,
+      "acierto": 5,
+      "abstencion_correcta": 0,
+      "correcto_total": 5,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
+    }
+  ]
+}

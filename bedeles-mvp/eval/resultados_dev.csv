@@ -1,0 +1,26 @@
+pregunta,faq_id_esperado,categoria_esperada,registro,conjunto,faq_predicha,similitud,abstiene,resultado
+¿Dónde queda el aula 302?,1,aulas,formal,dev,1,1.0,False,acierto
+¿En qué edificio están las aulas de informática?,2,aulas,formal,dev,2,1.0,False,acierto
+¿Dónde se publican las aulas por asignatura?,3,aulas,formal,dev,3,1.0,False,acierto
+¿Dónde puedo ver el mapa del campus?,4,aulas,formal,dev,4,1.0,False,acierto
+¿El aula 105 tiene acceso para sillas de ruedas?,5,aulas,formal,dev,5,1.0,False,acierto
+¿A qué hora abre la biblioteca?,6,horarios,formal,dev,6,1.0,False,acierto
+¿Cuál es el horario de la cafetería?,7,horarios,formal,dev,7,1.0,False,acierto
+¿Hasta qué hora abre la ventanilla de registros?,8,horarios,formal,dev,8,1.0,False,acierto
+¿El laboratorio de química abre los sábados?,9,horarios,formal,dev,9,1.0,False,acierto
+¿A qué hora cierra la universidad?,10,horarios,formal,dev,10,1.0,False,acierto
+¿Cómo retiro una asignatura?,11,tramites,formal,dev,11,1.0,False,acierto
+¿Cómo pido un certificado de notas?,12,tramites,formal,dev,12,1.0,False,acierto
+¿Cómo me inscribo a las asignaturas?,13,tramites,formal,dev,13,1.0,False,acierto
+¿Cómo solicito un reintegro?,14,tramites,formal,dev,14,1.0,False,acierto
+¿Dónde pago la mensualidad?,15,tramites,formal,dev,15,1.0,False,acierto
+¿Cómo me conecto al wifi del campus?,16,servicios,formal,dev,16,1.0,False,acierto
+¿Hay estacionamiento para visitantes?,17,servicios,formal,dev,17,1.0,False,acierto
+¿Hay servicio de enfermería?,18,servicios,formal,dev,18,1.0,False,acierto
+¿Dónde puedo imprimir documentos?,19,servicios,formal,dev,19,1.0,False,acierto
+¿Cómo contacto a un profesor?,20,servicios,formal,dev,20,1.0,False,acierto
+¿Dónde está la bedelía?,21,servicios,formal,dev,21,1.0,False,acierto
+¿Cuándo es el último día para retirar asignaturas?,22,avisos,formal,dev,22,1.0,False,acierto
+¿Hay clases este viernes?,23,avisos,formal,dev,23,1.0,False,acierto
+¿Cómo me entero de los avisos importantes?,24,avisos,formal,dev,24,1.0,False,acierto
+¿Cuándo son las inscripciones del próximo cuatrimestre?,25,avisos,formal,dev,25,1.0,False,acierto

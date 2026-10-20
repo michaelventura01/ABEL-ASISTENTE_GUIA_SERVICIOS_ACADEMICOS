@@ -1,0 +1,66 @@
+pregunta,faq_id_esperado,categoria_esperada,registro,conjunto,faq_predicha,similitud,abstiene,resultado
+¿Dónde está el aula 302?,1,aulas,formal,test,1.0,0.782,False,acierto
+¿En qué parte queda esa aula 302?,1,aulas,coloquial,test,1.0,0.723,False,acierto
+donde esta el aula 302,1,aulas,errores,test,1.0,0.782,False,acierto
+¿Dónde quedan los laboratorios de informática?,2,aulas,formal,test,9.0,0.564,False,error_respuesta_incorrecta
+¿En qué lugar son las clases de computación?,2,aulas,coloquial,test,,0.368,True,error_omision
+donde estan las aulas de informatica,2,aulas,errores,test,2.0,0.788,False,acierto
+¿Dónde veo qué aula me toca por materia?,3,aulas,coloquial,test,,0.369,True,error_omision
+¿En qué parte se anuncian las aulas de cada clase?,3,aulas,formal,test,3.0,0.473,False,acierto
+¿Hay un mapa de la universidad?,4,aulas,coloquial,test,10.0,0.593,False,error_respuesta_incorrecta
+¿Por dónde encuentro un plano del campus?,4,aulas,coloquial,test,4.0,0.527,False,acierto
+¿El aula 105 es accesible para discapacitados?,5,aulas,coloquial,test,5.0,0.541,False,acierto
+¿Se puede entrar al aula 105 en silla de ruedas?,5,aulas,coloquial,test,5.0,0.621,False,acierto
+¿Cuándo abre la biblioteca?,6,horarios,formal,test,6.0,0.766,False,acierto
+¿A qué hora está abierta la biblioteca?,6,horarios,coloquial,test,6.0,0.803,False,acierto
+a q hora abre la biblioteca,6,horarios,errores,test,6.0,0.962,False,acierto
+¿Hasta qué hora dan comida en la cafetería?,7,horarios,coloquial,test,7.0,0.531,False,acierto
+¿Cuándo cierra la cafetería?,7,horarios,coloquial,test,7.0,0.584,False,acierto
+¿Hasta qué hora está la oficina de registros?,8,horarios,coloquial,test,8.0,0.736,False,acierto
+¿Hasta que hora atienden en registros,8,horarios,errores,test,8.0,0.651,False,acierto
+¿El lab de química abre los sábados?,9,horarios,coloquial,test,9.0,0.88,False,acierto
+¿Los sábados hay laboratorio de química?,9,horarios,coloquial,test,9.0,0.899,False,acierto
+¿Hasta qué hora está abierto el campus?,10,horarios,coloquial,test,,0.447,True,error_omision
+¿Cuando cierran la universidad,10,horarios,errores,test,10.0,0.754,False,acierto
+¿Cómo hago para retirar una materia?,11,tramites,coloquial,test,11.0,0.49,False,acierto
+¿Qué hago si quiero soltar una asignatura?,11,tramites,coloquial,test,11.0,0.497,False,acierto
+como hago un retiro de asignatura,11,tramites,errores,test,11.0,0.819,False,acierto
+¿Cómo solicito mi récord de notas?,12,tramites,formal,test,14.0,0.543,False,error_respuesta_incorrecta
+¿Dónde pido el certificado de calificaciones?,12,tramites,coloquial,test,12.0,0.657,False,acierto
+¿Cómo hago la inscripción de las materias?,13,tramites,coloquial,test,13.0,0.474,False,acierto
+¿Cómo selecciono mis asignaturas en el sistema?,13,tramites,formal,test,13.0,0.471,False,acierto
+¿Qué hago para volver a la universidad después de un retiro?,14,tramites,coloquial,test,10.0,0.617,False,error_respuesta_incorrecta
+¿Dónde se paga la carrera?,15,tramites,coloquial,test,,0.383,True,error_omision
+¿En qué lugar puedo pagar la colegiatura?,15,tramites,coloquial,test,,0.325,True,error_omision
+¿Cuál es la clave del wifi de la universidad?,16,servicios,coloquial,test,10.0,0.52,False,error_respuesta_incorrecta
+¿Cómo accedo a la red Aurora-Wifi?,16,servicios,formal,test,,0.381,True,error_omision
+como me conecto al wifi,16,servicios,errores,test,16.0,0.861,False,acierto
+¿Dónde puedo aparcar si soy visitante?,17,servicios,coloquial,test,,0.416,True,error_omision
+¿Hay parqueo para gente de afuera?,17,servicios,coloquial,test,,0.433,True,error_omision
+¿Hay una enfermería en el campus?,18,servicios,formal,test,18.0,0.599,False,acierto
+¿Dónde atienden si alguien se siente mal?,18,servicios,coloquial,test,,0.243,True,error_omision
+¿Hay un lugar para imprimir en la universidad?,19,servicios,formal,test,10.0,0.515,False,error_respuesta_incorrecta
+¿Dónde hay impresoras para estudiantes?,19,servicios,coloquial,test,,0.444,True,error_omision
+¿Cómo hablo con un profesor de la universidad?,20,servicios,formal,test,20.0,0.607,False,acierto
+¿Cómo encuentro al maestro que me da clase?,20,servicios,coloquial,test,,0.286,True,error_omision
+¿Dónde encuentro a los bedeles?,21,servicios,coloquial,test,21.0,0.522,False,acierto
+¿Hasta cuándo puedo retirar una materia?,22,avisos,coloquial,test,22.0,0.487,False,acierto
+¿Cuál es la fecha límite para el retiro?,22,avisos,formal,test,22.0,0.479,False,acierto
+¿Este viernes hay docencia normal?,23,avisos,formal,test,23.0,0.647,False,acierto
+¿Se dan clases el viernes?,23,avisos,coloquial,test,23.0,0.739,False,acierto
+¿Dónde salen los avisos de la universidad?,24,avisos,coloquial,test,10.0,0.489,False,error_respuesta_incorrecta
+¿Dónde veo las noticias del campus?,24,avisos,coloquial,test,4.0,0.557,False,error_respuesta_incorrecta
+¿Cuándo me toca inscribir el próximo cuatrimestre?,25,avisos,coloquial,test,25.0,0.771,False,acierto
+¿Cuándo son las inscripciones del cuatrimestre que viene,25,avisos,errores,test,25.0,0.854,False,acierto
+¿Cómo solicito una beca?,fuera_alcance,ninguna,formal,test,14.0,0.586,False,error_falso_positivo
+¿Cómo pido una beca para estudiar?,fuera_alcance,ninguna,coloquial,test,,0.382,True,abstencion_correcta
+¿Hay residencias estudiantiles en la universidad?,fuera_alcance,ninguna,formal,test,10.0,0.522,False,error_falso_positivo
+¿Hay transporte interno en el campus?,fuera_alcance,ninguna,formal,test,,0.338,True,abstencion_correcta
+¿Quién ganó el partido de anoche?,fuera_alcance,ninguna,coloquial,test,,0.333,True,abstencion_correcta
+¿Cuál es la mejor carrera para ganar dinero?,fuera_alcance,ninguna,coloquial,test,22.0,0.455,False,error_falso_positivo
+¿Me puedes prestar dinero para el pasaje?,fuera_alcance,ninguna,coloquial,test,,0.37,True,abstencion_correcta
+¿Cómo hackeo el wifi de la universidad?,fuera_alcance,ninguna,coloquial,test,10.0,0.558,False,error_falso_positivo
+¿Qué receta me recomiendas para un pastel?,fuera_alcance,ninguna,coloquial,test,,0.321,True,abstencion_correcta
+¿Cuál es el sentido de la vida?,fuera_alcance,ninguna,coloquial,test,,0.431,True,abstencion_correcta
+¿Cuánto cuesta la matrícula de medicina?,fuera_alcance,ninguna,formal,test,,0.376,True,abstencion_correcta
+¿Cómo cambio mi contraseña del correo institucional?,fuera_alcance,ninguna,formal,test,16.0,0.462,False,error_falso_positivo

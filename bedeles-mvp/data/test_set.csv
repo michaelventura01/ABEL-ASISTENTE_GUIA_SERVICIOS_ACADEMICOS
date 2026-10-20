@@ -1,0 +1,91 @@
+pregunta,faq_id_esperado,categoria_esperada,registro,conjunto
+¿Dónde queda el aula 302?,1,aulas,formal,dev
+¿Dónde está el aula 302?,1,aulas,formal,test
+¿En qué parte queda esa aula 302?,1,aulas,coloquial,test
+donde esta el aula 302,1,aulas,errores,test
+¿En qué edificio están las aulas de informática?,2,aulas,formal,dev
+¿Dónde quedan los laboratorios de informática?,2,aulas,formal,test
+¿En qué lugar son las clases de computación?,2,aulas,coloquial,test
+donde estan las aulas de informatica,2,aulas,errores,test
+¿Dónde se publican las aulas por asignatura?,3,aulas,formal,dev
+¿Dónde veo qué aula me toca por materia?,3,aulas,coloquial,test
+¿En qué parte se anuncian las aulas de cada clase?,3,aulas,formal,test
+¿Dónde puedo ver el mapa del campus?,4,aulas,formal,dev
+¿Hay un mapa de la universidad?,4,aulas,coloquial,test
+¿Por dónde encuentro un plano del campus?,4,aulas,coloquial,test
+¿El aula 105 tiene acceso para sillas de ruedas?,5,aulas,formal,dev
+¿El aula 105 es accesible para discapacitados?,5,aulas,coloquial,test
+¿Se puede entrar al aula 105 en silla de ruedas?,5,aulas,coloquial,test
+¿A qué hora abre la biblioteca?,6,horarios,formal,dev
+¿Cuándo abre la biblioteca?,6,horarios,formal,test
+¿A qué hora está abierta la biblioteca?,6,horarios,coloquial,test
+a q hora abre la biblioteca,6,horarios,errores,test
+¿Cuál es el horario de la cafetería?,7,horarios,formal,dev
+¿Hasta qué hora dan comida en la cafetería?,7,horarios,coloquial,test
+¿Cuándo cierra la cafetería?,7,horarios,coloquial,test
+¿Hasta qué hora abre la ventanilla de registros?,8,horarios,formal,dev
+¿Hasta qué hora está la oficina de registros?,8,horarios,coloquial,test
+¿Hasta que hora atienden en registros,8,horarios,errores,test
+¿El laboratorio de química abre los sábados?,9,horarios,formal,dev
+¿El lab de química abre los sábados?,9,horarios,coloquial,test
+¿Los sábados hay laboratorio de química?,9,horarios,coloquial,test
+¿A qué hora cierra la universidad?,10,horarios,formal,dev
+¿Hasta qué hora está abierto el campus?,10,horarios,coloquial,test
+¿Cuando cierran la universidad,10,horarios,errores,test
+¿Cómo retiro una asignatura?,11,tramites,formal,dev
+¿Cómo hago para retirar una materia?,11,tramites,coloquial,test
+¿Qué hago si quiero soltar una asignatura?,11,tramites,coloquial,test
+como hago un retiro de asignatura,11,tramites,errores,test
+¿Cómo pido un certificado de notas?,12,tramites,formal,dev
+¿Cómo solicito mi récord de notas?,12,tramites,formal,test
+¿Dónde pido el certificado de calificaciones?,12,tramites,coloquial,test
+¿Cómo me inscribo a las asignaturas?,13,tramites,formal,dev
+¿Cómo hago la inscripción de las materias?,13,tramites,coloquial,test
+¿Cómo selecciono mis asignaturas en el sistema?,13,tramites,formal,test
+¿Cómo solicito un reintegro?,14,tramites,formal,dev
+¿Qué hago para volver a la universidad después de un retiro?,14,tramites,coloquial,test
+¿Dónde pago la mensualidad?,15,tramites,formal,dev
+¿Dónde se paga la carrera?,15,tramites,coloquial,test
+¿En qué lugar puedo pagar la colegiatura?,15,tramites,coloquial,test
+¿Cómo me conecto al wifi del campus?,16,servicios,formal,dev
+¿Cuál es la clave del wifi de la universidad?,16,servicios,coloquial,test
+¿Cómo accedo a la red Aurora-Wifi?,16,servicios,formal,test
+como me conecto al wifi,16,servicios,errores,test
+¿Hay estacionamiento para visitantes?,17,servicios,formal,dev
+¿Dónde puedo aparcar si soy visitante?,17,servicios,coloquial,test
+¿Hay parqueo para gente de afuera?,17,servicios,coloquial,test
+¿Hay servicio de enfermería?,18,servicios,formal,dev
+¿Hay una enfermería en el campus?,18,servicios,formal,test
+¿Dónde atienden si alguien se siente mal?,18,servicios,coloquial,test
+¿Dónde puedo imprimir documentos?,19,servicios,formal,dev
+¿Hay un lugar para imprimir en la universidad?,19,servicios,formal,test
+¿Dónde hay impresoras para estudiantes?,19,servicios,coloquial,test
+¿Cómo contacto a un profesor?,20,servicios,formal,dev
+¿Cómo hablo con un profesor de la universidad?,20,servicios,formal,test
+¿Cómo encuentro al maestro que me da clase?,20,servicios,coloquial,test
+¿Dónde está la bedelía?,21,servicios,formal,dev
+¿Dónde encuentro a los bedeles?,21,servicios,coloquial,test
+¿Cuándo es el último día para retirar asignaturas?,22,avisos,formal,dev
+¿Hasta cuándo puedo retirar una materia?,22,avisos,coloquial,test
+¿Cuál es la fecha límite para el retiro?,22,avisos,formal,test
+¿Hay clases este viernes?,23,avisos,formal,dev
+¿Este viernes hay docencia normal?,23,avisos,formal,test
+¿Se dan clases el viernes?,23,avisos,coloquial,test
+¿Cómo me entero de los avisos importantes?,24,avisos,formal,dev
+¿Dónde salen los avisos de la universidad?,24,avisos,coloquial,test
+¿Dónde veo las noticias del campus?,24,avisos,coloquial,test
+¿Cuándo son las inscripciones del próximo cuatrimestre?,25,avisos,formal,dev
+¿Cuándo me toca inscribir el próximo cuatrimestre?,25,avisos,coloquial,test
+¿Cuándo son las inscripciones del cuatrimestre que viene,25,avisos,errores,test
+¿Cómo solicito una beca?,fuera_alcance,ninguna,formal,test
+¿Cómo pido una beca para estudiar?,fuera_alcance,ninguna,coloquial,test
+¿Hay residencias estudiantiles en la universidad?,fuera_alcance,ninguna,formal,test
+¿Hay transporte interno en el campus?,fuera_alcance,ninguna,formal,test
+¿Quién ganó el partido de anoche?,fuera_alcance,ninguna,coloquial,test
+¿Cuál es la mejor carrera para ganar dinero?,fuera_alcance,ninguna,coloquial,test
+¿Me puedes prestar dinero para el pasaje?,fuera_alcance,ninguna,coloquial,test
+¿Cómo hackeo el wifi de la universidad?,fuera_alcance,ninguna,coloquial,test
+¿Qué receta me recomiendas para un pastel?,fuera_alcance,ninguna,coloquial,test
+¿Cuál es el sentido de la vida?,fuera_alcance,ninguna,coloquial,test
+¿Cuánto cuesta la matrícula de medicina?,fuera_alcance,ninguna,formal,test
+¿Cómo cambio mi contraseña del correo institucional?,fuera_alcance,ninguna,formal,test
