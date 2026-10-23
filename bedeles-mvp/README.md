@@ -1,156 +1,169 @@
-# Bedeles · Asistencia Universitaria Inteligente (MVP)
+# ABEL / Bedeles — Documentación técnica
 
-MVP de un asistente de orientación universitaria con cuatro funciones: preguntas frecuentes, registro de incidencias con ticket, consulta del estado del ticket y panel de métricas.
+**Versión:** MVP con interfaz azul  
+**Fecha:** 23 de octubre de 2026  
+**Estado:** prototipo académico; no certificado para producción.
 
-> **Demo académica:** el catálogo representa a la Universidad Nueva Aurora, una institución ficticia. Sustituye y valida la información con la institución real antes de cualquier piloto. No introduzcas contraseñas, matrículas, datos de salud ni otra información sensible.
+## 1. Propósito y alcance técnico
 
-## 1. Requisitos
+ABEL / Bedeles es una aplicación web de demostración para orientar a estudiantes sobre servicios universitarios y registrar incidencias. La interfaz se construye con Streamlit. La recuperación de preguntas frecuentes utiliza un catálogo CSV y scikit-learn; las consultas y las incidencias se guardan en SQLite local.
 
-- Python 3.11 o 3.12 recomendado.
-- `pip` y `venv`.
-- Conexión a Internet para instalar las dependencias la primera vez.
-- Aproximadamente 200 MB libres.
-- No necesita API key, modelo generativo, base de datos externa ni Docker.
+La institución y los datos incluidos (`Universidad Nueva Aurora`) son ficticios. No debe utilizarse con información personal, credenciales o casos reales confidenciales.
 
-## 2. Descargar el proyecto
+## 2. Arquitectura lógica
 
-Este repositorio contiene la aplicación dentro de la carpeta `bedeles-mvp`.
-
-```bash
-git clone https://github.com/michaelventura01/ABEL-ASISTENTE_GUIA_SERVICIOS_ACADEMICOS.git
-cd ABEL-ASISTENTE_GUIA_SERVICIOS_ACADEMICOS/bedeles-mvp
+```text
+Navegador
+   │
+   ▼
+Streamlit (app.py)
+   ├── Interfaz: Asistente / Reportar incidencia / Consultar estado / Métricas
+   ├── FAQRetriever (src/retriever.py)
+   │      ├── data/faq.csv
+   │      └── data/faq_aliases.csv
+   └── Persistencia (src/incidencias.py)
+          └── SQLite local (data/bedeles.db por defecto)
 ```
 
-Si descargaste un ZIP desde GitHub, descomprímelo y entra en la carpeta `bedeles-mvp` que contiene `app.py` y `requirements.txt`.
+### Componentes
 
-## 3. Crear el entorno virtual
+- **`app.py`**: configura la página, define la identidad visual CSS azul, crea las cuatro pestañas y conecta las acciones de usuario con el recuperador y las funciones de persistencia.
+- **`src/retriever.py`**: recupera una respuesta del catálogo mediante similitud textual; considera preguntas originales y variantes, combina puntuaciones por FAQ y aplica un umbral para decidir si responde o se abstiene.
+- **`src/incidencias.py`**: inicializa SQLite y expone funciones para crear y consultar incidencias, registrar consultas, listar incidencias y calcular métricas.
+- **`data/faq.csv`**: catálogo de preguntas frecuentes y respuestas demostrativas.
+- **`data/faq_aliases.csv`**: variantes de formulación asociadas a las FAQs para mejorar la recuperación.
+- **`data/test_set.csv`**: conjunto de evaluación etiquetado.
+- **`eval/evaluate.py`**: ejecuta la evaluación sobre los conjuntos disponibles y produce CSV/JSON con resultados y métricas.
+- **`tests/`**: pruebas del recuperador y de la interfaz Streamlit.
+- **`assets/`**: imágenes y recursos visuales del proyecto.
 
-### Ubuntu / Linux / macOS
+## 3. Tecnologías y dependencias
+
+| Tecnología | Uso |
+|---|---|
+| Python 3.11 o 3.12 recomendado | Runtime |
+| Streamlit 1.66.0 | Aplicación web |
+| pandas 3.0.6 | Lectura y tratamiento de datos tabulares |
+| scikit-learn 1.9.1 | Recuperación basada en similitud textual |
+| SQLite | Persistencia local sin servidor externo |
+| CSV | Catálogo FAQ, alias y datos de evaluación |
+
+No requiere API key de IA generativa, Docker ni base de datos externa para el modo demo.
+
+## 4. Requisitos de ejecución
+
+- Python 3.11/3.12 recomendado.
+- `pip` y `venv`.
+- Acceso a Internet para instalar las dependencias.
+- Permisos de escritura en la carpeta de datos o configuración de una ruta alternativa para SQLite.
+
+## 5. Instalación en Ubuntu / Linux
+
+Desde la raíz del repositorio:
 
 ```bash
+cd bedeles-mvp
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
 
-Si `venv` no está disponible en Ubuntu/Debian:
+Si no existe `venv`:
 
 ```bash
 sudo apt update
 sudo apt install -y python3-venv python3-pip
 ```
 
-### Windows PowerShell
-
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-```
-
-Si PowerShell bloquea la activación, puedes ejecutar el intérprete directamente con `.venv\Scripts\python.exe` o seguir la política de ejecución aprobada por tu organización.
-
-## 4. Instalar dependencias
-
-Con el entorno virtual activado:
+Comprobar dependencias:
 
 ```bash
-python -m pip install -r requirements.txt
+python -c "import streamlit, pandas, sklearn; print(streamlit.__version__, pandas.__version__, sklearn.__version__)"
 ```
 
-Comprueba las dependencias:
-
-```bash
-python -c "import streamlit, pandas, sklearn; print('Streamlit', streamlit.__version__); print('Pandas', pandas.__version__); print('scikit-learn', sklearn.__version__)"
-```
-
-Si la instalación falla por falta de Internet o por una versión de Python incompatible, revisa el error de `pip`; no continúes hasta que la importación anterior funcione.
-
-## 5. Ejecutar ABEL / Bedeles
-
-Desde la carpeta `bedeles-mvp` y con el entorno activado:
+## 6. Ejecutar la aplicación
 
 ```bash
 python -m streamlit run app.py
 ```
 
-Abre la URL local que muestra la terminal, normalmente `http://localhost:8501`.
+Abrir la dirección local mostrada por Streamlit; normalmente `http://localhost:8501`. Detener con `Ctrl+C`.
 
-Para detener la aplicación, vuelve a la terminal y pulsa `Ctrl+C`.
+Para ejecutar la aplicación en un equipo de la red local, Streamlit puede enlazarse a una interfaz accesible por red, pero no se recomienda exponer el MVP sin autenticación y controles de seguridad. Si se requiere acceso en LAN, configurar explícitamente el host y el firewall conforme a la política local.
 
-## 6. Probar el motor de respuestas
+## 7. Base de datos y persistencia
 
-Estas pruebas no requieren que la interfaz Streamlit esté ejecutándose:
+La aplicación inicializa SQLite mediante `inicializar_db()`. La ruta por defecto se determina en el módulo de incidencias; el README del proyecto documenta la opción `BEDELES_DB` para usar una ruta alternativa.
+
+Ejemplo temporal:
 
 ```bash
-python tests/test_retriever.py
-python -m compileall -q app.py src tests eval
+BEDELES_DB=/tmp/bedeles-test.db python -m streamlit run app.py
 ```
 
-Ejecuta la evaluación del conjunto de desarrollo y del conjunto de prueba:
+La persistencia es local. En contenedores o plataformas efímeras, el archivo puede perderse al reiniciar o volver a desplegar. La base de datos no incorpora por sí misma autenticación ni autorización.
+
+## 8. Pruebas y evaluación
+
+### Validación estática y pruebas
+
+```bash
+python -m compileall -q app.py src tests eval
+python tests/test_retriever.py
+python tests/test_app.py
+```
+
+### Evaluación del recuperador
 
 ```bash
 python eval/evaluate.py --conjunto dev --umbral 0.60
 python eval/evaluate.py --conjunto test --umbral 0.60
 ```
 
-La evaluación genera/actualiza `eval/resultados_*.csv` y `eval/metricas_*.json`. El conjunto de prueba tiene 65 casos; no debe utilizarse para ajustar repetidamente el sistema sin crear otro conjunto independiente de validación.
+Los resultados se escriben en `eval/`. Las métricas disponibles son sobre un conjunto sintético de 65 preguntas; no son garantía de calidad con usuarios reales. Mantener un conjunto de prueba independiente y no ajustar repetidamente el sistema contra él.
 
-## 7. Ejecutar pruebas de interfaz
+## 9. Configuración visual
 
-Con todas las dependencias instaladas:
+La identidad visual usa una paleta azul:
 
-```bash
-python tests/test_app.py
-```
+| Token | Color |
+|---|---|
+| Azul profundo | `#123B82` |
+| Azul principal | `#2378F7` |
+| Celeste | `#54B8FF` |
+| Azul pálido | `#DCEEFF` |
+| Fondo | `#F3F8FF` |
+| Texto | `#183568` |
 
-Estas pruebas utilizan `streamlit.testing.v1.AppTest` y una base de datos temporal. Si aparece `ModuleNotFoundError: streamlit`, activa el entorno virtual correcto e instala `requirements.txt`.
+En la versión actual, los estilos están definidos dentro del bloque CSS de `app.py`. Si se extraen a un archivo externo, debe mantenerse la ruta y la carga del CSS de forma coherente.
 
-## 8. Qué cambió en esta versión
+## 10. Seguridad, privacidad y limitaciones
 
-- `src/retriever.py`: el motor indexa tanto las preguntas oficiales como sus variantes editoriales, agrega las puntuaciones por FAQ y valida el umbral.
-- `data/faq_aliases.csv`: incorpora formulaciones alternativas para las 25 FAQs.
-- Umbral predeterminado elevado de `0.45` a `0.60` para priorizar la precisión y reducir respuestas no sustentadas.
-- Peticiones explícitas de contraseña/credenciales se abstienen en lugar de recuperar una FAQ no relacionada.
-- `tests/test_retriever.py`: pruebas independientes del motor, incluida la abstención para solicitudes sensibles.
-- `docs/07_instalacion_y_validacion.md`: guía de instalación, ejecución, pruebas y límites conocidos.
+- El campus y el catálogo son ficticios.
+- No introducir contraseñas, matrículas, información médica ni datos sensibles.
+- El texto de las consultas puede guardarse en SQLite para métricas; informar al usuario y minimizar los datos retenidos.
+- Las incidencias se guardan localmente y la demo advierte que no existe control de acceso a tickets.
+- Antes de un piloto real: definir autenticación, autorización por rol, política de retención, copias de seguridad, acceso a la base, registro seguro, validación de entradas y responsable institucional de las FAQs.
+- La aplicación recupera respuestas existentes; no es un chatbot generativo y no debe prometer información que no esté en el catálogo.
+- La abstención y el umbral deben evaluarse con preguntas reales y aprobadas por responsables de servicios académicos.
 
-### Resultado de evaluación de referencia
+## 11. Operación y mantenimiento
 
-Con `--conjunto test --umbral 0.60`, en el conjunto sintético actual:
+1. Revisar las FAQs con el departamento responsable.
+2. Añadir o corregir respuestas y variantes en los CSV correspondientes.
+3. Ejecutar pruebas unitarias y evaluación.
+4. Revisar errores, omisiones y falsas coincidencias.
+5. Respaldar la base SQLite si se necesita conservar el historial.
+6. Registrar versión, fecha de actualización y responsable de los cambios.
 
-- Acierto entre preguntas dentro del alcance: **84.9% (45/53)**.
-- Respuestas incorrectas dentro del alcance: **0/53**.
-- Omisiones dentro del alcance: **8/53 (15.1%)**.
-- Abstención correcta en preguntas fuera de alcance: **12/12 (100%)**.
-
-Estos resultados son una medición del conjunto de prueba del proyecto, no una garantía sobre consultas de usuarios reales. Las variantes añadidas deben revisarse por una persona que conozca los servicios de la institución.
-
-## 9. Base de datos
-
-SQLite crea `data/bedeles.db` automáticamente al iniciar o utilizar la aplicación. Para pruebas, se puede cambiar la ruta sin tocar la base principal:
-
-### Linux / macOS
-
-```bash
-BEDELES_DB=/tmp/bedeles-test.db python -m streamlit run app.py
-```
-
-### Windows PowerShell
-
-```powershell
-$env:BEDELES_DB = "$env:TEMP\bedeles-test.db"
-python -m streamlit run app.py
-```
-
-La base local no tiene autenticación ni autorización. No la expongas públicamente ni la uses para gestionar incidencias confidenciales sin controles adicionales.
-
-## 10. Estructura
+## 12. Estructura del proyecto
 
 ```text
 bedeles-mvp/
 ├── app.py
 ├── requirements.txt
+├── README.md
 ├── data/
 │   ├── faq.csv
 │   ├── faq_aliases.csv
@@ -159,17 +172,25 @@ bedeles-mvp/
 │   ├── retriever.py
 │   └── incidencias.py
 ├── tests/
-│   ├── test_app.py
-│   └── test_retriever.py
+│   ├── test_retriever.py
+│   └── test_app.py
 ├── eval/
+│   ├── evaluate.py
+│   ├── resultados_dev.csv
+│   ├── resultados_test.csv
+│   └── métricas JSON
+├── assets/
 └── docs/
 ```
 
-## 11. Límites antes de producción
+## 13. Estado de validación conocido
 
-- Reemplazar la institución ficticia por datos oficiales revisados y con fecha de actualización.
-- Proteger o no almacenar texto libre sensible; definir retención y acceso a tickets.
-- Añadir autenticación/autorización si se publica fuera del equipo local.
-- Configurar despliegue persistente: el almacenamiento local puede perderse en servicios efímeros.
-- Probar con preguntas reales, con consentimiento y sin datos personales; revisar falsos positivos y omisiones.
-- Definir un responsable institucional para mantener las FAQs y los alias actualizados.
+En una validación previa de componentes se informó que la compilación sintáctica de Python, las pruebas aisladas del recuperador y una prueba de SQLite pasaron. La prueba integral de interfaz quedó pendiente en ese entorno porque Streamlit no estaba instalado y no se pudo descargar. La validación definitiva debe ejecutarse en el equipo donde se instalará el proyecto y documentar los resultados actuales.
+
+## 14. Capturas de referencia
+
+- `captura_1.png`: asistente en escritorio.
+- `captura_2.png`: panel de métricas.
+- `captura_3.png`: consulta del estado de incidencia.
+- `captura_4.png`: formulario de registro de incidencia.
+- `captura_5.png`: visualización móvil del asistente.
