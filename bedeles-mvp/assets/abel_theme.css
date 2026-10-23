@@ -1,0 +1,94 @@
+/* Tema visual de ABEL: paleta azul institucional */
+:root {
+    --abel-navy: #123B82;
+    --abel-blue: #2378F7;
+    --abel-sky: #54B8FF;
+    --abel-pale: #DCEEFF;
+    --abel-bg: #F3F8FF;
+    --abel-ink: #183568;
+    --abel-muted: #526B96;
+    --abel-border: #CFE3FF;
+}
+.stApp {
+    background: linear-gradient(180deg, #EAF4FF 0%, var(--abel-bg) 42%, #FFFFFF 100%);
+    color: var(--abel-ink);
+}
+[data-testid="stHeader"] { background: rgba(243, 248, 255, .88); }
+.block-container { max-width: 1440px; padding-top: 1.3rem; padding-bottom: 2.5rem; }
+.abel-hero {
+    position: relative; overflow: hidden; border-radius: 24px;
+    padding: 2rem 2.2rem; margin: .2rem 0 1.1rem;
+    color: #fff; background: linear-gradient(115deg, #123B82 0%, #1858C9 48%, #2378F7 76%, #54B8FF 100%);
+    box-shadow: 0 16px 38px rgba(35, 120, 247, .20);
+}
+.abel-hero:after {
+    content: ''; position: absolute; width: 360px; height: 360px; right: -110px; top: -205px;
+    border-radius: 50%; background: rgba(255,255,255,.12); pointer-events: none;
+}
+.abel-hero-row { display:flex; align-items:center; gap: 1.15rem; position:relative; z-index:1; }
+.abel-logo {
+    display:flex; align-items:center; justify-content:center; flex: 0 0 74px; height:74px;
+    border-radius:20px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.24);
+    font-size:2.5rem;
+}
+.abel-hero h1 { color:#fff; font-size:clamp(1.55rem, 3vw, 2.55rem); line-height:1.15; margin:0 0 .5rem; font-weight:800; letter-spacing:-.035em; }
+.abel-hero p { color:rgba(255,255,255,.88); margin:0; font-size:1rem; }
+h1, h2, h3, h4 { color: var(--abel-navy); letter-spacing:-.02em; }
+p, label, [data-testid="stMarkdownContainer"] { color: var(--abel-ink); }
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    gap: .55rem; padding: .55rem; border: 1px solid #D9E9FF; border-radius: 18px;
+    background: rgba(255,255,255,.92); box-shadow: 0 8px 24px rgba(18,59,130,.07);
+}
+[data-testid="stTabs"] button[role="tab"] {
+    border-radius: 12px; padding: .75rem 1rem; color: var(--abel-navy); font-weight:650;
+    border: 1px solid transparent; transition: all .18s ease;
+}
+[data-testid="stTabs"] button[role="tab"]:hover { background:#EAF4FF; color:var(--abel-blue); }
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+    background: linear-gradient(120deg, var(--abel-blue), #3995FF); color:white; border-color:transparent;
+    box-shadow:0 5px 14px rgba(35,120,247,.22);
+}
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] p { color:white; }
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: var(--abel-border) !important; border-radius: 18px !important;
+}
+[data-testid="stSelectbox"] [data-baseweb="select"] > div,
+[data-testid="stNumberInput"] input,
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stChatInput"] textarea {
+    border-color: var(--abel-border) !important; border-radius: 12px !important;
+    background: #fff !important; color: var(--abel-ink) !important;
+}
+[data-testid="stSelectbox"] [data-baseweb="select"] > div:focus-within,
+[data-testid="stNumberInput"] input:focus,
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus {
+    border-color: var(--abel-blue) !important; box-shadow: 0 0 0 3px rgba(35,120,247,.12) !important;
+}
+.stButton > button, [data-testid="stFormSubmitButton"] button {
+    border:0; border-radius:12px; color:#fff; font-weight:700;
+    background:linear-gradient(120deg, #2378F7, #3995FF); box-shadow:0 5px 14px rgba(35,120,247,.18);
+    transition:transform .15s ease, box-shadow .15s ease;
+}
+.stButton > button:hover, [data-testid="stFormSubmitButton"] button:hover {
+    color:#fff; border:0; transform:translateY(-1px); box-shadow:0 8px 20px rgba(35,120,247,.27);
+}
+[data-testid="stMetric"] { background:linear-gradient(145deg,#FFFFFF,#EDF6FF); border:1px solid var(--abel-border); padding:1rem 1.1rem; border-radius:16px; }
+[data-testid="stMetricLabel"] p { color:var(--abel-muted) !important; }
+[data-testid="stMetricValue"] { color:var(--abel-navy) !important; font-weight:800; }
+[data-testid="stAlert"] { border-radius:14px; }
+[data-testid="stChatMessage"] { background:rgba(255,255,255,.88); border:1px solid #DFECFF; border-radius:16px; padding:1rem; }
+[data-testid="stProgressBar"] > div > div { background:linear-gradient(90deg,#2378F7,#54B8FF); }
+hr { border-color:#D7E7FB !important; }
+[data-testid="stDataFrame"] { border:1px solid var(--abel-border); border-radius:14px; overflow:hidden; }
+.abel-note { margin-top:1.1rem; padding:1rem 1.2rem; border-radius:16px; background:linear-gradient(100deg,#E5F2FF,#F5FAFF); border:1px solid #D2E7FF; color:#23477F; }
+.abel-note strong { color:#123B82; }
+@media (max-width: 700px) {
+    .block-container { padding-left:1rem; padding-right:1rem; }
+    .abel-hero { padding:1.4rem; border-radius:18px; }
+    .abel-logo { flex-basis:54px; height:54px; border-radius:15px; font-size:1.8rem; }
+    .abel-hero-row { align-items:flex-start; gap:.8rem; }
+    [data-testid="stTabs"] [data-baseweb="tab-list"] { gap:.2rem; padding:.35rem; }
+    [data-testid="stTabs"] button[role="tab"] { padding:.55rem .6rem; font-size:.82rem; }
+}

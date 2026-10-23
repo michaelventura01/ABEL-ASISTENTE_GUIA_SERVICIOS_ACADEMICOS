@@ -1,5 +1,5 @@
 {
-  "umbral": 0.45,
+  "umbral": 0.6,
   "conjunto": "dev",
   "n_total": 25,
   "cobertura_evaluada": 25,

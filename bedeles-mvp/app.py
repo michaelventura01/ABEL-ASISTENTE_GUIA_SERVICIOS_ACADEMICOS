@@ -43,13 +43,35 @@ def cargar_retriever() -> FAQRetriever:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Bedeles · MVP", page_icon="🎓", layout="wide")
+    st.set_page_config(
+        page_title="Bedeles · Asistencia Universitaria Inteligente",
+        page_icon="🎓",
+        layout="wide",
+        initial_sidebar_state="collapsed",
+    )
     inicializar_db()
 
-    st.title("Bedeles · Asistencia Universitaria Inteligente")
-    st.caption(
-        "MVP del Grupo 3 · Maestría en Ciencias de Datos e IA (UASD). "
-        "Datos del campus ficticio *Universidad Nueva Aurora*."
+    # Cargar el tema visual desde un archivo CSS independiente.
+    css_path = Path(__file__).resolve().parent / "assets" / "abel_theme.css"
+    st.markdown(
+        f"<style>{css_path.read_text(encoding='utf-8')}</style>",
+        unsafe_allow_html=True,
+    )
+
+    # Cabecera de ABEL.
+    st.markdown(
+        """
+        <header class="abel-hero">
+          <div class="abel-hero-row">
+            <div class="abel-logo">🎓</div>
+            <div>
+              <h1>Bedeles · Asistencia Universitaria Inteligente</h1>
+              <p>MVP del Grupo 3 · Maestría en Ciencias de Datos e IA (UASD). Datos del campus ficticio <em>Universidad Nueva Aurora</em>.</p>
+            </div>
+          </div>
+        </header>
+        """,
+        unsafe_allow_html=True,
     )
 
     tab_chat, tab_reportar, tab_estado, tab_panel = st.tabs(
@@ -57,7 +79,7 @@ def main() -> None:
     )
 
     with tab_chat:
-        st.subheader("Consulta al asistente")
+        st.subheader("💬 Consulta al asistente")
         st.markdown(
             "Pregunta sobre aulas, horarios, trámites, servicios o avisos. "
             "Si el asistente no sabe la respuesta, te lo dirá y te indicará "
@@ -110,12 +132,12 @@ def main() -> None:
             with st.chat_message(m["rol"]):
                 st.markdown(m["contenido"])
 
-        st.divider()
         st.markdown(
-            "**Límite del asistente:** responde por recuperación del catálogo "
-            "(25 FAQs). No genera respuestas nuevas. Las consultas se guardan "
-            "localmente (SQLite) solo con fines de métricas: evita escribir "
-            "datos personales o sensibles."
+            "<div class=\"abel-note\">🛡️ &nbsp; <strong>Límite del asistente:</strong> "
+            "responde por recuperación del catálogo (25 FAQs). No genera respuestas nuevas. "
+            "Las consultas se guardan localmente (SQLite) solo con fines de métricas: "
+            "evita escribir datos personales o sensibles.</div>",
+            unsafe_allow_html=True,
         )
 
     with tab_reportar:

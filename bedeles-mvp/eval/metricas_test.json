@@ -1,25 +1,25 @@
 {
-  "umbral": 0.45,
+  "umbral": 0.6,
   "conjunto": "test",
   "n_total": 65,
   "cobertura_evaluada": 53,
   "fuera_de_alcance": 12,
-  "tasa_acierto_en_alcance": 0.642,
-  "tasa_respuesta_automatica_en_alcance": 0.792,
-  "tasa_respuesta_automatica_total": 0.831,
-  "tasa_omision_en_alcance": 0.208,
-  "tasa_respuesta_incorrecta_en_alcance": 0.151,
-  "tasa_abstencion_correcta_fuera_alcance": 0.583,
-  "tasa_falso_positivo_fuera_alcance": 0.417,
+  "tasa_acierto_en_alcance": 0.849,
+  "tasa_respuesta_automatica_en_alcance": 0.849,
+  "tasa_respuesta_automatica_total": 0.877,
+  "tasa_omision_en_alcance": 0.151,
+  "tasa_respuesta_incorrecta_en_alcance": 0.0,
+  "tasa_abstencion_correcta_fuera_alcance": 1.0,
+  "tasa_falso_positivo_fuera_alcance": 0.0,
   "por_registro": [
     {
       "registro": "coloquial",
       "n": 40,
-      "acierto": 18,
-      "abstencion_correcta": 5,
-      "correcto_total": 23,
-      "tasa_acierto": 0.45,
-      "tasa_correcta_global": 0.575
+      "acierto": 28,
+      "abstencion_correcta": 7,
+      "correcto_total": 35,
+      "tasa_acierto": 0.7,
+      "tasa_correcta_global": 0.875
     },
     {
       "registro": "errores",
@@ -33,22 +33,22 @@
     {
       "registro": "formal",
       "n": 17,
-      "acierto": 8,
-      "abstencion_correcta": 2,
-      "correcto_total": 10,
-      "tasa_acierto": 0.471,
-      "tasa_correcta_global": 0.588
+      "acierto": 9,
+      "abstencion_correcta": 5,
+      "correcto_total": 14,
+      "tasa_acierto": 0.529,
+      "tasa_correcta_global": 0.824
     }
   ],
   "por_registro_en_alcance": [
     {
       "registro": "coloquial",
       "n": 33,
-      "acierto": 18,
+      "acierto": 28,
       "abstencion_correcta": 0,
-      "correcto_total": 18,
-      "tasa_acierto": 0.545,
-      "tasa_correcta_global": 0.545
+      "correcto_total": 28,
+      "tasa_acierto": 0.848,
+      "tasa_correcta_global": 0.848
     },
     {
       "registro": "errores",
@@ -62,67 +62,67 @@
     {
       "registro": "formal",
       "n": 12,
-      "acierto": 8,
+      "acierto": 9,
       "abstencion_correcta": 0,
-      "correcto_total": 8,
-      "tasa_acierto": 0.667,
-      "tasa_correcta_global": 0.667
+      "correcto_total": 9,
+      "tasa_acierto": 0.75,
+      "tasa_correcta_global": 0.75
     }
   ],
   "por_categoria": [
     {
       "categoria_esperada": "aulas",
       "n": 12,
-      "acierto": 8,
+      "acierto": 9,
       "abstencion_correcta": 0,
-      "correcto_total": 8,
-      "tasa_acierto": 0.667,
-      "tasa_correcta_global": 0.667
-    },
-    {
-      "categoria_esperada": "avisos",
-      "n": 8,
-      "acierto": 6,
-      "abstencion_correcta": 0,
-      "correcto_total": 6,
+      "correcto_total": 9,
       "tasa_acierto": 0.75,
       "tasa_correcta_global": 0.75
     },
     {
+      "categoria_esperada": "avisos",
+      "n": 8,
+      "acierto": 7,
+      "abstencion_correcta": 0,
+      "correcto_total": 7,
+      "tasa_acierto": 0.875,
+      "tasa_correcta_global": 0.875
+    },
+    {
       "categoria_esperada": "horarios",
       "n": 11,
-      "acierto": 10,
+      "acierto": 11,
       "abstencion_correcta": 0,
-      "correcto_total": 10,
-      "tasa_acierto": 0.909,
-      "tasa_correcta_global": 0.909
+      "correcto_total": 11,
+      "tasa_acierto": 1.0,
+      "tasa_correcta_global": 1.0
     },
     {
       "categoria_esperada": "ninguna",
       "n": 12,
       "acierto": 0,
-      "abstencion_correcta": 7,
-      "correcto_total": 7,
+      "abstencion_correcta": 12,
+      "correcto_total": 12,
       "tasa_acierto": 0.0,
-      "tasa_correcta_global": 0.583
+      "tasa_correcta_global": 1.0
     },
     {
       "categoria_esperada": "servicios",
       "n": 12,
-      "acierto": 4,
+      "acierto": 9,
       "abstencion_correcta": 0,
-      "correcto_total": 4,
-      "tasa_acierto": 0.333,
-      "tasa_correcta_global": 0.333
+      "correcto_total": 9,
+      "tasa_acierto": 0.75,
+      "tasa_correcta_global": 0.75
     },
     {
       "categoria_esperada": "tramites",
       "n": 10,
-      "acierto": 6,
+      "acierto": 9,
       "abstencion_correcta": 0,
-      "correcto_total": 6,
-      "tasa_acierto": 0.6,
-      "tasa_correcta_global": 0.6
+      "correcto_total": 9,
+      "tasa_acierto": 0.9,
+      "tasa_correcta_global": 0.9
     }
   ]
 }
