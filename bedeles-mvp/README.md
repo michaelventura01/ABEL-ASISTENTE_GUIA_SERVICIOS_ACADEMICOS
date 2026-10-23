@@ -187,10 +187,4 @@ bedeles-mvp/
 
 En una validación previa de componentes se informó que la compilación sintáctica de Python, las pruebas aisladas del recuperador y una prueba de SQLite pasaron. La prueba integral de interfaz quedó pendiente en ese entorno porque Streamlit no estaba instalado y no se pudo descargar. La validación definitiva debe ejecutarse en el equipo donde se instalará el proyecto y documentar los resultados actuales.
 
-## 14. Capturas de referencia
 
-- `captura_1.png`: asistente en escritorio.
-- `captura_2.png`: panel de métricas.
-- `captura_3.png`: consulta del estado de incidencia.
-- `captura_4.png`: formulario de registro de incidencia.
-- `captura_5.png`: visualización móvil del asistente.
