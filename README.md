@@ -1,6 +1,6 @@
 # ABEL / Bedeles — Documentación técnica
 
-**Versión:** MVP con interfaz azul  
+**Versión:** MVP 1.0  
 **Fecha:** 23 de octubre de 2026  
 **Estado:** prototipo académico; no certificado para producción.
 
